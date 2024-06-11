@@ -42,6 +42,9 @@ android {
         singleVariant("release") {
             // Customize the "release" component if needed (e.g., withSourcesJar())
         }
+        singleVariant("debug") {
+            // Customize the "release" component if needed (e.g., withSourcesJar())
+        }
     }
 }
 
