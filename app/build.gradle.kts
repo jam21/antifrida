@@ -75,7 +75,7 @@ afterEvaluate {
             create<MavenPublication>("debug") {
                 from(components["debug"])
                 groupId = "com.tg.antifrida"
-                artifactId = "antifrida-debug"
+                artifactId = "antifrida"
                 version = "1.0"
             }
         }
