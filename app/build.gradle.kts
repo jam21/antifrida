@@ -37,15 +37,6 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
-    publishing {
-        singleVariant("release") {
-            // Customize the "release" component if needed (e.g., withSourcesJar())
-        }
-        singleVariant("debug") {
-            // Customize the "release" component if needed (e.g., withSourcesJar())
-        }
-    }
 }
 
 dependencies {
@@ -60,24 +51,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.tg.antifrida"
-                artifactId = "antifrida"
-                version = "0.1"
-            }
-
-            create<MavenPublication>("debug") {
-                from(components["debug"])
-                groupId = "com.tg.antifrida"
-                artifactId = "antifrida"
-                version = "1.0"
-            }
-        }
-    }
 }
