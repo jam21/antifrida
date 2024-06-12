@@ -78,7 +78,7 @@ publishing {
         register<MavenPublication>("debug") {
             groupId = "com.tg.antifrida"
             artifactId = "antifrida"
-            version = "0.1.6"
+            version = "0.1.6-debug"
             afterEvaluate {
                 from(components["debug"])
             }
