@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tg.antifrida"
+    namespace = "com.tg.antifrida1"
     compileSdk = 34
 
     defaultConfig {
