@@ -1,6 +1,9 @@
+import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -27,7 +30,7 @@ android {
             )
         }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -42,6 +45,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    publishing {
+        multipleVariants {
+            allVariants()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -52,4 +62,27 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.tg.antifrida"
+            artifactId = "antifrida"
+            version = "0.1.6"
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+
+        register<MavenPublication>("debug") {
+            groupId = "com.tg.antifrida"
+            artifactId = "antifrida"
+            version = "0.1.6"
+            afterEvaluate {
+                from(components["debug"])
+            }
+        }
+
+    }
 }
