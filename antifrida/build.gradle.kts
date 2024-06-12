@@ -1,4 +1,3 @@
-import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
 
 plugins {
     alias(libs.plugins.android.library)
@@ -11,7 +10,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
