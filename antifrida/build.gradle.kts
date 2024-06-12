@@ -49,6 +49,7 @@ android {
         multipleVariants {
             allVariants()
             withJavadocJar()
+            withSourcesJar()
         }
     }
 }
