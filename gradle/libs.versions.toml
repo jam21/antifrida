@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.1"
+agp = "8.4.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -11,7 +11,6 @@ kotlinxcore = "1.6.4"
 constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
-maven="1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
